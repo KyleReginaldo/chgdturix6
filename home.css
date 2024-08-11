@@ -1,0 +1,586 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white; /* Background color set to white */
+    color: black; /* Text color set to black */
+}
+
+/* Top Header */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    padding-right: 25px;
+    padding-bottom: 0%;
+    background-color: black; /* Header color set to black */
+    color: white; /* Text color set to white */
+    position: relative; /* Position relative for dropdown */
+}
+
+.logo-img {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    margin-top: 15px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 5px;
+    margin-right: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.icon {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.icon-img {
+    width: 24px; /* Fixed width for icons */
+    height: 24px; /* Fixed height for icons */
+}
+
+/* Dropdown Menu */
+.menu-toggle {
+    position: relative;
+}
+
+.menu-toggle .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: black;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.menu-toggle:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #eb7324;
+}
+
+/* Main Navigation */
+.main-header {
+    background-color: black; /* Header color set to black */
+    padding: 10px 0;
+}
+
+.main-header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.main-header nav ul li {
+    margin: 0 20px;
+}
+
+.main-header nav ul li a {
+    text-decoration: none;
+    color: white; /* Text color set to white */
+    font-size: 18px;
+    transition: color 0.3s, border-bottom 0.3s; /* Smooth transition for hover effects */
+    padding-bottom: 5px; /* Space for border effect */
+    border-bottom: 2px solid transparent; /* Bottom border effect */
+}
+
+.main-header nav ul li a:hover {
+    color: #eb7324; /* Text color on hover */
+    border-bottom: 2px solid #eb7324; /* Border color on hover */
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Fixed height for the banner */
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; /* Ensure the slider fills the banner height */
+}
+
+.slider-img {
+    width: 100%;
+    height: 100%; /* Ensure images fill the banner */
+    object-fit: cover; /* Ensure images cover the banner area */
+    display: none;
+}
+
+.slider-img.active {
+    display: block;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.slider-controls .prev,
+.slider-controls .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* Banner Text */
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(177, 0, 0);
+    z-index: 10;
+}
+
+.banner-text h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.banner-text p {
+    font-size: 18px;
+    margin-bottom: 20px; /* Space between text and button */
+}
+
+/* Shop Now Button */
+.shop-now-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #eb7324;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.shop-now-button:hover {
+    background-color: #efc143;
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Information Section */
+.info-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 8%;
+}
+
+.info-item {
+    flex: 1;
+    max-width: 200px;
+    padding: 10px;
+}
+
+.info-item i {
+    font-size: 24px;
+    color: #eb7324;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    font-size: 16px;
+    color: black;
+    margin: 0;
+}
+
+.featured-products-section {
+    flex: 2;
+    display: flex;
+}
+
+.featured-products-nav {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-right: 2px solid #ccc;
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.featured-products-nav h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.featured-products-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.featured-products-nav li {
+    margin-bottom: 10px;
+}
+
+.featured-products-nav .category-icon {
+    width: 30px; /* Adjust icon size */
+    height: auto;
+    margin-right: 10px;
+}
+
+.featured-products-nav a {
+    text-decoration: none;
+    color: black; /* Text color for categories */
+    font-size: 18px;
+}
+
+.featured-products-nav a:hover {
+    color: #eb7324;
+}
+
+/* Existing styles here */
+
+/* Featured Products Section */
+.featured-products {
+    display: flex;
+    margin: 20px;
+    gap: 20px;
+}
+
+/* Category Sidebar */
+.categories {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.categories h2 {
+    margin-bottom: 15px;
+}
+
+.categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categories ul li {
+    margin-bottom: 10px;
+}
+
+.categories ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.categories ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Products Section */
+.products {
+    width: 80%;
+}
+
+.products h2 {
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.product-info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.product-info button {
+    background-color: #eb7324;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.product-info button:hover {
+    background-color: #d96b1a;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .featured-products {
+        flex-direction: column;
+    }
+
+    .categories {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .products {
+        width: 100%;
+    }
+}
+
+/* Brand Slider Section */
+.brand-slider {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.brand-slider h2 {
+    margin-bottom: 20px;
+}
+
+.brand-slider-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+}
+
+.brand {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 100px;
+    margin-bottom: 5%;
+}
+
+.brand img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Hide scrollbar for WebKit browsers */
+.brand-slider-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.brand-slider-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media (max-width: 768px) {
+    .brand-slider-wrapper {
+        gap: 10px;
+    }
+}
+
+/* Blog Post Section */
+.blog-posts {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.blog-posts h2 {
+    margin-bottom: 20px;
+}
+
+.blog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.blog-post {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.blog-info {
+    padding: 15px;
+}
+
+.blog-info h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.blog-info p {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        gap: 10px;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 15px;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-media a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.social-media a:hover {
+    color: #007BFF;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .social-media {
+        margin-top: 15px;
+    }
+
+    .social-media a {
+        margin: 0 5px;
+        font-size: 1.2rem;
+    }
+}

@@ -124,6 +124,8 @@
     </style>
   </head>
   <body>
+    <?php
+    include 'navbar.php';?>
     <div class="container py-4 px-0">
       <div class="row">
         <div class="big-side-pic col-md-2" id="side-tire">
@@ -177,7 +179,9 @@
           </div>
           <div class="row ml-1">
             <button class="buy-now col-sm-5 mr-3">Buy Now</button>
-            <button class="add-to-cart col-sm-5">Add To Cart</button>
+            <a href="cart.php" class="add-to-cart col-sm-5 btn btn-info"
+              >Bistek</a
+            >
           </div>
         </div>
       </div>
