@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product</title>
+    <title>Product Detail</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -30,7 +30,7 @@
         margin-bottom: 4px;
       }
       .buy-now {
-        background-color: green;
+        background-color: orange;
         border: none;
         color: white;
         padding: 8px 16px;
@@ -39,8 +39,8 @@
       }
       .add-to-cart {
         background-color: white;
-        border: 1px solid green;
-        color: green;
+        border: 1px solid orange;
+        color: orange;
         border-radius: 4px;
         padding: 8px 16px;
       }
@@ -49,19 +49,19 @@
         font-size: 12px;
         text-align: center;
         color: black;
-        background-color: rgb(124, 219, 121);
+        background-color: rgb(250, 216, 152);
         padding: 4px 4px;
         margin: 2px 4px;
         border: none;
       }
 
       .active {
-        background-color: green;
+        background-color: orange;
         color: white;
         border: none;
       }
       .picked {
-        background-color: green;
+        background-color: orange;
         color: white;
         border: none;
       }
@@ -78,13 +78,23 @@
         border: none;
       }
       hr {
-        border-color: green;
+        border-color: orange;
         border-width: 2px;
       }
-      .quantity {
-        border: 1px solid green;
+      #quantity {
+        border: 1px solid orange;
         text-align: center;
-        width: 50px;
+        width: 100px;
+      }
+
+      .quantity-container button {
+        border: none;
+        background-color: lightgray;
+        color: black;
+        transition: background-color 0.2s ease-in-out;
+      }
+      .quantity-container button:hover {
+        background-color: orange;
       }
 
       @media only screen and (max-width: 759px) {
@@ -103,38 +113,35 @@
         }
         .quantity-container {
           display: flex;
+          max-width: 200px;
+          width: 100%;
         }
+
         .quantity {
-          background-color: red;
+          width: 100%;
         }
       }
     </style>
   </head>
   <body>
-    <div class="container py-4">
+    <div class="container py-4 px-0">
       <div class="row">
-        <div class="big-side-pic col-sm-2">
-          <img class="side-pic img-fluid" src="tire.jpg" alt="" />
-          <img class="side-pic img-fluid" src="tire.jpg" alt="" />
-          <img class="side-pic img-fluid" src="tire.jpg" alt="" />
-          <img class="side-pic img-fluid" src="tire.jpg" alt="" />
+        <div class="big-side-pic col-md-2" id="side-tire">
+          <img class="side-pic img-fluid" src="images/tire.jpg" alt="" />
+          <img class="side-pic img-fluid" src="images/tire.jpg" alt="" />
+          <img class="side-pic img-fluid" src="images/tire.jpg" alt="" />
+          <img class="side-pic img-fluid" src="images/tire.jpg" alt="" />
         </div>
         <div class="col-md-5">
-          <img class="primary-img img-fluid" src="tire.jpg" alt="" />
+          <img class="primary-img img-fluid" src="images/tire.jpg" alt="" />
         </div>
-        <div class="small-side-pic col-md-2">
-          <img class="side-pic img-fluid" src="tire.jpg" alt="" />
-          <img class="side-pic img-fluid" src="tire.jpg" alt="" />
-          <img class="side-pic img-fluid" src="tire.jpg" alt="" />
-          <img class="side-pic img-fluid" src="tire.jpg" alt="" />
-        </div>
+        <div class="small-side-pic col-md-2"></div>
         <div class="col-md-5 pt-2">
-          <h2>MaBlackMen</h2>
+          <h2>Bridgestone Potenza</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
-            mollitia, fugit dolor asperiores, quam obcaecati eos ab provident
-            deleniti quibusdam velit sapiente aliquam qui incidunt reprehenderit
-            ad ratione optio repellat.
+            High-performance all-season tire for sports cars, performance for
+            sedances, and coupes. It offers excellent wet and try traction,
+            enhanced handling, and a confortable ride.
           </p>
           <span class="fa fa-star checked" style="color: yellow"></span>
           <span class="fa fa-star checked" style="color: yellow"></span>
@@ -143,8 +150,11 @@
           <span class="fa fa-star mr-1s"
             ><span class="ml-1"> 120+ Reviews </span></span
           >
-          <h5 class="pb-3" id="price">900</h5>
-          <div class="quantity-container">
+          <h5 class="pb-1" id="price-lead">₱<span id="price">900</span></h5>
+          <h4 class="pb-3 pt-0 mt-0" id="total-lead" hidden>
+            ₱<span id="total">0</span>
+          </h4>
+          <div class="quantity-container mb-2">
             <button class="subtract" id="subtract" onclick="subtract()">
               -
             </button>
@@ -160,10 +170,10 @@
           </div>
           <p class="mb-1 p-0 ml-1">Sizes:</p>
           <div class="row pb-4 ml-0" id="sizes-container">
-            <button class="size-title col-sm-3 active">Small</button>
-            <button class="size-title col-sm-3">Medium</button>
-            <button class="size-title col-sm-3">Large</button>
-            <button class="size-title col-md-3">Extra Large</button>
+            <button class="size-title col-sm-3 active">204/55R16</button>
+            <button class="size-title col-sm-3">225/45R17</button>
+            <button class="size-title col-sm-3">245/40R18</button>
+            <button class="size-title col-md-3">275/35R19</button>
           </div>
           <div class="row ml-1">
             <button class="buy-now col-sm-5 mr-3">Buy Now</button>
@@ -198,7 +208,7 @@
       <p class="lead">Related Products</p>
       <div class="row">
         <div class="col-md-3">
-          <img class="img-fluid" src="tire.jpg" alt="" />
+          <img class="img-fluid" src="images/tire.jpg" alt="" />
           <h5 class="mb-2 mt-2">Dunlop GRandtrek Touring A/S</h5>
           <p>₱ 8,250</p>
           <p class="text-secondary">
@@ -207,7 +217,7 @@
           </p>
         </div>
         <div class="col-md-3">
-          <img class="img-fluid" src="tire.jpg" alt="" />
+          <img class="img-fluid" src="images/tire.jpg" alt="" />
           <h5 class="mb-2 mt-2">Dunlop Grandtrek AT20</h5>
           <p>₱ 9,350</p>
           <p class="text-secondary">
@@ -217,7 +227,7 @@
           </p>
         </div>
         <div class="col-md-3">
-          <img class="img-fluid" src="tire.jpg" alt="" />
+          <img class="img-fluid" src="images/tire.jpg" alt="" />
           <h5 class="mb-2 mt-2">Dunlop Direzza DZ102</h5>
           <p>₱ 7,700</p>
           <p class="text-secondary">
@@ -227,7 +237,7 @@
           </p>
         </div>
         <div class="col-md-3">
-          <img class="img-fluid" src="tire.jpg" alt="" />
+          <img class="img-fluid" src="images/tire.jpg" alt="" />
           <h5 class="mb-2 mt-2">Dunlop SP Sport Maxx RT</h5>
           <p>₱ 11,000</p>
           <p class="text-secondary">
@@ -259,13 +269,18 @@
       }
       let price = document.getElementById("price");
       let input = document.getElementById("quantity");
+      let total = document.getElementById("total");
+      let priceLead = document.getElementById("price-lead");
+      let totalLead = document.getElementById("total-lead");
 
       function add() {
         console.log(`inner ${input.value}`);
         var currentValue = parseInt(input.value, 10);
         var newValue = currentValue + 1;
         input.value = newValue;
-        price.textContent = `${Number(price.innerHTML) * Number(newValue)}`;
+        total.textContent = `${Number(price.innerHTML) * Number(newValue)}`;
+        totalLead.hidden = false;
+        priceLead.style.color = "grey";
       }
       function subtract() {
         if (Number(input.value) > 1) {
@@ -273,9 +288,24 @@
           var currentValue = parseInt(input.value, 10);
           var newValue = currentValue - 1;
           input.value = newValue;
-          price.textContent = Number(price.innerHTML) - 900;
+          total.textContent = Number(total.innerHTML) - 900;
+          if (Number(total.innerHTML) == 900) {
+            totalLead.hidden = true;
+            priceLead.style.color = "black";
+          }
         }
       }
+      //!SECTION List of tires
+      var tireContainer = document.querySelector(".big-side-pic");
+      const tires = [
+        "images/tire1.jpg",
+        "images/tire2.jpg",
+        "images/tire3.jpg",
+        "images/tire4.jpg",
+      ];
+      document.getElementById("side-tire").innerHTML = tires.map(
+        (tire) => `<img class="side-pic img-fluid" src="${tire}" alt="" />`
+      );
     </script>
   </body>
 </html>
